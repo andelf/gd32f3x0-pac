@@ -1,8 +1,31 @@
 [package]
 name = "gd32f3x0-pac"
 version = "0.1.0"
+authors = ["Andelf <andelf@gmail.com>"]
+repository = "https://github.com/andelf/gd32f3x0-pac"
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Peripheral access API for GD32F3x0 chips (generated using svd2rust)"
+keywords = ["gd32", "svd2rust", "peripheral", "embedded"]
+readme = "README.md"
+license = "MIT/Apache-2.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+path = "lib.rs"
+
+[features]
+default = ["rt"]
+rt = ["cortex-m-rt/device"]
 
 [dependencies]
+cortex-m = "0.7"
+vcell = "0.1"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = ">=0.6.15,<0.8"
+
+[package.metadata.docs.rs]
+default-target = "thumbv7em-none-eabi"
+features = ["rt"]
+targets = []

@@ -21805,7 +21805,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <description>control register 1</description>
           <addressOffset>0x300</addressOffset>
           <size>0x20</size>
-          <access>write</access>
+          <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
